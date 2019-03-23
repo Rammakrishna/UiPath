@@ -65,6 +65,7 @@
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Int32" Default="0" Name="Write_Counter" />
     </Sequence.Variables>
+    <WriteLine DisplayName="Write Line" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="Bhatia" />
     <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" Visible="False" WorkbookPath="C:\Users\ibindra\Desktop\TestExcel.xlsx">
       <ui:ExcelApplicationScope.Body>
         <ActivityAction x:TypeArguments="ui:WorkbookApplication">
@@ -75,6 +76,7 @@
             <Sequence.Variables>
               <Variable x:TypeArguments="sd:DataTable" Name="TestExcelDT" />
             </Sequence.Variables>
+            <ui:GetQueueItem ContinueOnError="{x:Null}" QueueType="{x:Null}" TimeoutMS="{x:Null}" TransactionItem="{x:Null}" DisplayName="Get Transaction Item" sap2010:WorkflowViewState.IdRef="GetQueueItem_1" />
             <ui:ExcelReadRange AddHeaders="False" DataTable="[TestExcelDT]" DisplayName="Read Range" sap2010:WorkflowViewState.IdRef="ExcelReadRange_1" SheetName="Sheet1">
               <ui:ExcelReadRange.Range>
                 <InArgument x:TypeArguments="x:String">
@@ -117,10 +119,12 @@
         </ActivityAction>
       </ui:ExcelApplicationScope.Body>
     </ui:ExcelApplicationScope>
-    <sads:DebugSymbol.Symbol>d0ZEOlxMZWFybmluZ1xVaVBhdGhcUHJvZ3JhbXNcVWlQYXRoXEFzc2lnbm1lbnRfMlxCbGFua1Byb2Nlc3NcTWFpbi54YW1sFkADeQ4CAQFCM0I2AgECRAV3IAIBA0SwAUTZAQIBHEoLdBYCAQRODVQhAgEXVQ1zHQIBBU49TkwCARpRE1FCAgEZTqMBTqsBAgEYVT5VTQIBFVsTcB4CAQZcFW8iAgEHXKABXLEBAgEUYhtsJgIBCGMdaiYCAQ9rHWvYAQIBCWhHaFoCARJlSGVXAgEQazVrXwIBDWvEAWvVAQIBC2u2AWu+AQIBCg==</sads:DebugSymbol.Symbol>
+    <sads:DebugSymbol.Symbol>d0ZEOlxMZWFybmluZ1xVaVBhdGhcUHJvZ3JhbXNcVWlQYXRoXEFzc2lnbm1lbnRfMlxCbGFua1Byb2Nlc3NcTWFpbi54YW1sGUADew4CAQFCM0I2AgECRAVEZwIBHkUFeSACAQNEXERkAgEfRbABRdkBAgEdSwt2FgIBBE8NT9QBAgEcUA1WIQIBF1cNdR0CAQVQPVBMAgEaUxNTQgIBGVCjAVCrAQIBGFc+V00CARVdE3IeAgEGXhVxIgIBB16gAV6xAQIBFGQbbiYCAQhlHWwmAgEPbR1t2AECAQlqR2paAgESZ0hnVwIBEG01bV8CAQ1txAFt1QECAQtttgFtvgECAQo=</sads:DebugSymbol.Symbol>
   </Sequence>
   <sap2010:WorkflowViewState.ViewStateManager>
     <sap2010:ViewStateManager>
+      <sap2010:ViewStateData Id="WriteLine_1" sap:VirtualizedContainerService.HintSize="441.333333333333,62.6666666666667" />
+      <sap2010:ViewStateData Id="GetQueueItem_1" sap:VirtualizedContainerService.HintSize="405.333333333333,22" />
       <sap2010:ViewStateData Id="ExcelReadRange_1" sap:VirtualizedContainerService.HintSize="405.333333333333,58.6666666666667" />
       <sap2010:ViewStateData Id="Assign_1" sap:VirtualizedContainerService.HintSize="314,62" />
       <sap2010:ViewStateData Id="ExcelWriteCell_1" sap:VirtualizedContainerService.HintSize="314,86.6666666666667" />
@@ -140,22 +144,22 @@
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
       <sap2010:ViewStateData Id="ForEachRow_1" sap:VirtualizedContainerService.HintSize="405.333333333333,721.333333333333" />
-      <sap2010:ViewStateData Id="Sequence_7" sap:VirtualizedContainerService.HintSize="427.333333333333,944">
+      <sap2010:ViewStateData Id="Sequence_7" sap:VirtualizedContainerService.HintSize="427.333333333333,1006">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="ExcelApplicationScope_1" sap:VirtualizedContainerService.HintSize="441.333333333333,1052.66666666667" />
-      <sap2010:ViewStateData Id="Sequence_4" sap:VirtualizedContainerService.HintSize="463.333333333333,1176.66666666667">
+      <sap2010:ViewStateData Id="ExcelApplicationScope_1" sap:VirtualizedContainerService.HintSize="441.333333333333,1114.66666666667" />
+      <sap2010:ViewStateData Id="Sequence_4" sap:VirtualizedContainerService.HintSize="463.333333333333,1341.33333333333">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="Main_1" sap:VirtualizedContainerService.HintSize="503.333333333333,1256.66666666667" />
+      <sap2010:ViewStateData Id="Main_1" sap:VirtualizedContainerService.HintSize="503.333333333333,1461.33333333333" />
     </sap2010:ViewStateManager>
   </sap2010:WorkflowViewState.ViewStateManager>
 </Activity>
