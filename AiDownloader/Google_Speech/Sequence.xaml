@@ -1,0 +1,93 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Sequence" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="768,562.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="21">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="16">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Sequence" sap:VirtualizedContainerService.HintSize="728,482.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="ui:GenericValue" Name="Text1" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:AnchorBase AnchorPosition="Left" DisplayName="Anchor Base" sap:VirtualizedContainerService.HintSize="706,260" sap2010:WorkflowViewState.IdRef="AnchorBase_1">
+      <ui:AnchorBase.Action>
+        <ActivityAction x:TypeArguments="ui:Anchor">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="ui:Anchor" Name="ContextAnchor" />
+          </ActivityAction.Argument>
+          <ui:GetOCRText WordsInfo="{x:Null}" DisplayName="Get OCR Text 'text  233119'" sap:VirtualizedContainerService.HintSize="314,168" sap2010:WorkflowViewState.IdRef="GetOCRText_1">
+            <ui:GetOCRText.OCREngine>
+              <ActivityFunc x:TypeArguments="sd:Image, scg:IEnumerable(scg:KeyValuePair(sd:Rectangle, x:String))">
+                <ActivityFunc.Argument>
+                  <DelegateInArgument x:TypeArguments="sd:Image" Name="Image" />
+                </ActivityFunc.Argument>
+                <ui:GoogleOCR FilterRegion="{x:Null}" Output="{x:Null}" Text="{x:Null}" AllowedCharacters="" ComputeSkewAngle="False" DeniedCharacters="" DisplayName="Tesseract OCR" ExtractWords="False" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="GoogleOCR_1" Image="[Image]" Invert="False" Language="eng" Profile="Screen" Scale="2" />
+              </ActivityFunc>
+            </ui:GetOCRText.OCREngine>
+            <ui:GetOCRText.Target>
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="25e3fa6bb47d23599b19f17e466b0b64" Selector="&lt;ctrl /&gt;" WaitForReady="INTERACTIVE" />
+            </ui:GetOCRText.Target>
+            <ui:GetOCRText.Text>
+              <OutArgument x:TypeArguments="ui:GenericValue">[Text1]</OutArgument>
+            </ui:GetOCRText.Text>
+          </ui:GetOCRText>
+        </ActivityAction>
+      </ui:AnchorBase.Action>
+      <ui:AnchorBase.AnchorProvider>
+        <ui:WaitImageAppear FoundElement="{x:Null}" DisplayName="Find Image 'UIDemo.exe  UIDemo'" sap:VirtualizedContainerService.HintSize="314,106" sap2010:WorkflowViewState.IdRef="WaitImageAppear_1">
+          <ui:WaitImageAppear.Image>
+            <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" InitialScalingFactor="1.5" TargetImageBase64="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" />
+          </ui:WaitImageAppear.Image>
+          <ui:WaitImageAppear.Target>
+            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" Selector="&lt;wnd app='uidemo.exe' cls='HwndWrapper*' title='UIDemo' /&gt;" WaitForReady="INTERACTIVE" />
+          </ui:WaitImageAppear.Target>
+        </ui:WaitImageAppear>
+      </ui:AnchorBase.AnchorProvider>
+    </ui:AnchorBase>
+    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" Buttons="Ok" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="706,58.6666666666667" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[Text1]" TopMost="True" />
+  </Sequence>
+</Activity>

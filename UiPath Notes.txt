@@ -1,0 +1,89 @@
+1. To get name of process: 
+	System.Diagnostics.Process.GetProcessesByName("Chrome")
+
+2. To select specific rows from a Data Table
+	Array_1 = ExtractDataTable.Select("Type = 'WI5' and Status = 'Open'")
+		Type and Status are columns of DT and it returns the output in form of an array not DT.
+
+3. When you publish your package, you need to update it in Process section in Orchestrator. Only then its available for use in all robots.
+
+4. Default type into- Just types it like a human being by opening a window
+	Simulate Type into - It just removes formatting from text and types everything in one line
+	Windowed 
+
+5. Want to find #Common and #Uncommon values between two #Lists?
+	Try this...
+	*****
+	
+	#Common
+	List<int> one = new List<int>() {1, 3, 4, 6, 7};
+	List<int> second = new List<int>() {1, 2, 4, 5};
+	foreach(int r in one.Intersect(second))
+	
+	#Uncommon
+	int[] one = new int[] { 1, 2, 3, 4 };
+	int[] second = new int[] { 2, 3, 5, 6 };
+	foreach(int r in one.Except(second))
+	or
+	foreach(int r in second.Except(one))
+
+6. To get outlook mail via mail address
+	"[senderemailaddress]=gurlekau@capgemini.com"
+
+	To get outlook mail via user name
+	"[FROM]=‘Miller Peter’"
+
+7. To get count of a specific repeating words.
+	Repetition_count_Double = (Output_String.Length - Output_String.Replace("Outlook","").Length) / "Outlook".Length
+
+	explanation - "aa bb cc dd aa ff"
+	Output_String.Length = 12
+	Output_String.Replace("aa","").Length = 8
+	subtraction = 4
+	dividing by actual "aa".length = 4/2 = 2
+	2 is number of times "aa" is in string.
+
+8. To get data from a list when select one is not working
+	1) Use Get Attribute Activity and get the "items" attribute of the dropdown list.
+	2) Output will be a Array
+	3) Just search the Array, if array item contains "Corporation - 157075" then use that in select item Activity	
+
+9. Use Convert.ToByte(Str) to convert any string or char to bytes
+	eg Convert.ToByte("A"c)
+		o/p = 65
+
+10. To Split Text 
+	-Text1.Split ({"\n",system.Environment.NewLine },StringSplitOptions .None ) -- new line split.
+	-Conf_id.ToString.Split(" "c) -- character Split
+	-Clientinfo.Split({"Client ID: ","Client Name: ","Client Country: "},StringSplitOptions.None) -- Multiple Split
+	-Clientinfo.Split("Client ID: ",StringSplitOptions.None)     -- Single 
+
+11. To get the file list in a directory
+	Directory.GetFiles(“address”)	
+
+12. To color a specific cell in excel
+	a. To get actual row index of the cells to be colored :- Assign StrIndex = (dtTable1.Rows.IndexOf(row)+2).ToString
+	b. Use SET RANGE COLOR activity.
+	c. In Properties :- Color - System.Drawing.Color.Yellow
+	                    Range - "A"+strIndex+":C"+strIndex
+
+13. To check if a string is empty or not- 
+	NOT String.IsNullOrEmpty(row("Name").ToString.Trim)
+			above will return true or false	                   
+
+14. UiPath robot save execution files here. Same is when we execute process via orchestrator.
+		'C:\Users\ibindra\.nuget\packages'
+
+15. Convert DataTable to DataRow in raw format.
+		'Assign - Datarow = DataTable.Select()'
+
+16. Newsotom json conversion 
+
+17. Comparing strings: 
+		row.Item(3).ToString.Equals("")
+
+DataRow rows = DataTable.Select("[COLUMN 1]='' OR [COLUMN 2]=''");
+
+
+18. To get unique rows from a DT to another DT:
+	Assign - dtYourDataTable = dtYourDataTable.AsEnumerable.GroupBy(Function (drRows) drRows.Item("User")).Select(Function (drGroupedRows) drGroupedRows.First).CopyToDataTable
