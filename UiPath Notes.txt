@@ -87,3 +87,27 @@ DataRow rows = DataTable.Select("[COLUMN 1]='' OR [COLUMN 2]=''");
 
 18. To get unique rows from a DT to another DT:
 	Assign - dtYourDataTable = dtYourDataTable.AsEnumerable.GroupBy(Function (drRows) drRows.Item("User")).Select(Function (drGroupedRows) drGroupedRows.First).CopyToDataTable
+
+19. To match 2 data rows.
+		Convert the entire data rows (of both excel) to HASH (By joining the itemArr via String.Join function and apply the Hash activity.) and compare hashes
+
+20. To take screenshot - 
+		a. Use take screenshot activity. (UiPath.core.Image - Variable Type)
+		b. Use save image
+
+21. Convert Regex Match{} to Collections.List{}
+		list_string = match_ienumerable_result.AsQueryable.select(function(x) x.value).tolist
+
+22. To convert System.Security.SecureString to String
+		String_Variable = new System.Net.NetworkCredential(string.Empty,secure).Password
+
+23. To cast values.
+			New_String = CType(var, String)
+			DirectCast(var, String) is used to up-cast an object into a string. If you know that an object variable is, in fact, a string, use this. This is the same as (string)var in C#
+
+24. To get value from QueueItem
+		CashIn = in_TransactionItem.SpecificContent("CashIn").ToString
+
+23. To get excel workbook sheets or any excel related detail
+		a. Define a variable in Excel Application's output (eg Myworkbook)
+		b. Use the variable to get sheets (eg Myworkbook.getsheets)
