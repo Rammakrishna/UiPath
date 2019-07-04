@@ -111,3 +111,10 @@ DataRow rows = DataTable.Select("[COLUMN 1]='' OR [COLUMN 2]=''");
 23. To get excel workbook sheets or any excel related detail
 		a. Define a variable in Excel Application's output (eg Myworkbook)
 		b. Use the variable to get sheets (eg Myworkbook.getsheets)
+
+
+24. To create a new folder path - use this.
+
+		System.IO.Path.Combine(folderPath, Today.ToString("MM-dd-yyyy")
+
+25.
