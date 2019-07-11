@@ -1,0 +1,86 @@
+<DocumentElement>
+  <MyTable>
+    <Column-0>Blind 
+
+</Column-0>
+    <Participants>5 
+
+</Participants>
+    <Ballots_x0020__x0020__x0020_Completed>1 
+
+</Ballots_x0020__x0020__x0020_Completed>
+    <Ballots_x0020__x0020__x0020_Incomplete_x002F__x0020__x0020__x0020_Terminated>4 
+
+</Ballots_x0020__x0020__x0020_Incomplete_x002F__x0020__x0020__x0020_Terminated>
+    <Results>34.5%, n=1 
+
+</Results>
+    <Column-5>1199 sec, n=1 
+
+</Column-5>
+  </MyTable>
+  <MyTable>
+    <Column-0>Low Vision 
+
+</Column-0>
+    <Participants>5 
+
+</Participants>
+    <Ballots_x0020__x0020__x0020_Completed>2 
+
+</Ballots_x0020__x0020__x0020_Completed>
+    <Ballots_x0020__x0020__x0020_Incomplete_x002F__x0020__x0020__x0020_Terminated>3 
+
+</Ballots_x0020__x0020__x0020_Incomplete_x002F__x0020__x0020__x0020_Terminated>
+    <Results>98.3% n=2 
+
+(97.7%, n=3) 
+
+</Results>
+    <Column-5>1716 sec, n=3 
+
+(1934 sec, n=2) 
+
+</Column-5>
+  </MyTable>
+  <MyTable>
+    <Column-0>Dexterity 
+
+</Column-0>
+    <Participants>5 
+
+</Participants>
+    <Ballots_x0020__x0020__x0020_Completed>4 
+
+</Ballots_x0020__x0020__x0020_Completed>
+    <Ballots_x0020__x0020__x0020_Incomplete_x002F__x0020__x0020__x0020_Terminated>1 
+
+</Ballots_x0020__x0020__x0020_Incomplete_x002F__x0020__x0020__x0020_Terminated>
+    <Results>98.3%, n=4 
+
+</Results>
+    <Column-5>1672.1 sec, n=4 
+
+</Column-5>
+  </MyTable>
+  <MyTable>
+    <Column-0>Mobility 
+
+</Column-0>
+    <Participants>3 
+
+</Participants>
+    <Ballots_x0020__x0020__x0020_Completed>3 
+
+</Ballots_x0020__x0020__x0020_Completed>
+    <Ballots_x0020__x0020__x0020_Incomplete_x002F__x0020__x0020__x0020_Terminated>0 
+
+</Ballots_x0020__x0020__x0020_Incomplete_x002F__x0020__x0020__x0020_Terminated>
+    <Results>95.4%, n=3 
+
+</Results>
+    <Column-5>1416 sec, n=3 
+
+</Column-5>
+  </MyTable>
+</DocumentElement>

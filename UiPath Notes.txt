@@ -113,8 +113,35 @@ DataRow rows = DataTable.Select("[COLUMN 1]='' OR [COLUMN 2]=''");
 		b. Use the variable to get sheets (eg Myworkbook.getsheets)
 
 
-24. To create a new folder path - use this.
+24. To create a new folder path - use this. This is helpful, because you don’t need to worry about the ending slash mark. Secondly, use either Now or Today as your current DateTime so simplify things a bit
 
 		System.IO.Path.Combine(folderPath, Today.ToString("MM-dd-yyyy")
 
-25.
+25. To add a default value to dictionary
+		dict = new Dictionary(of string,string) from {{"Key","Value"}}
+
+26. To convert to int32
+		integer = Convert.ToInt32(value)
+
+27. To upload entire row on orchestrator:
+		How to use Datatable (or any other object) in Queue (Orchestrator):
+
+			Add to queue:
+			
+				In Studio, import Newtonsoft.Json namespace
+				Serialize datatable using the following command (output string): JSONConvert.SerializeObject(dt)
+				Send the string to queue
+			Consume queue:
+				
+				Get the string from queue
+				Use Deserialize json activity (from Uipath.Web.Activities package) using TypeArgument DataTable property
+				Use the outputed datatable for your workflow.
+
+28. To solve Newton soft issue
+		C:\Users\ibindra\.nuget\packages\newtonsoft.json
+
+29. To upload entire row on queue - 
+		1. For each row, addd row to a custom data table using - Invoke method and invoking  - 'ImportRow' method
+		1. Use this to upload DT as object (place this in item information property of AddQueueItem activity)
+				Newtonsoft.Json.JsonConvert.SerializeObject(SingleRowDT)
+		2. 
