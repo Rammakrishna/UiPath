@@ -145,3 +145,17 @@ DataRow rows = DataTable.Select("[COLUMN 1]='' OR [COLUMN 2]=''");
 		2. Use this to upload DT as object (place this in item information property of AddQueueItem activity)
 				Newtonsoft.Json.JsonConvert.SerializeObject(SingleRowDT)
 		3. Then get the queue item and use Deserialize JSON activity with DataTable setup.
+
+30. To compare 2 array directly: 
+		MasterCOllection.Intersect(DupCollection).Any() 
+
+31. To use String format like python - 
+		String.Format("C:\Users\{0}\AppData\Local\Programs\Python\Python36-32",uname)
+
+32. To accept dictionary from python code
+		Figured it out:
+
+		1. In your python code return a json object as 
+				return json.dumps(dict_output)
+		2. Then here in Get Python Object accept a string,
+		3. Use Deserialize JSON activity to convert string to dictionary
