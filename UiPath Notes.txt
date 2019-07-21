@@ -159,3 +159,4 @@ DataRow rows = DataTable.Select("[COLUMN 1]='' OR [COLUMN 2]=''");
 				return json.dumps(dict_output)
 		2. Then here in Get Python Object accept a string,
 		3. Use Deserialize JSON activity to convert string to dictionary
+		
