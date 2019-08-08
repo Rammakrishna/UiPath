@@ -159,4 +159,20 @@ DataRow rows = DataTable.Select("[COLUMN 1]='' OR [COLUMN 2]=''");
 				return json.dumps(dict_output)
 		2. Then here in Get Python Object accept a string,
 		3. Use Deserialize JSON activity to convert string to dictionary
-		
+
+33. To a particular column as a list
+		(From row in temp_DT.AsEnumerable() Select Convert.Tostring(row(0))).ToList() 
+
+34. To get current directory:
+		1. Get Environment Variable Activity
+		2. Type - "CurrentDirectory" in it
+
+35. To get a filtered datatable as per an array
+	(From row In outputdt.AsEnumerable() Join value In arr_var On row.Field(Of String)("COl1") Equals value Select row).CopyToDataTable
+ 
+
+36. To remove element(s) from an array with a single line of code:
+		arr_2 = arr_1.Except(new String() {"a"}).ToArray
+
+37. Deep Copy of Dictionary:
+		new Dictionary(of key_type,value_type) (old_dict)
