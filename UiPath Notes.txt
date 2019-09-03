@@ -2,8 +2,11 @@
 	System.Diagnostics.Process.GetProcessesByName("Chrome")
 
 2. To select specific rows from a Data Table
-	Array_1 = ExtractDataTable.Select("Type = 'WI5' and Status = 'Open'")
+	Method 1 - When there is no space in column name 
+		Array_1 = ExtractDataTable.Select("Type = 'WI5' and Status = 'Open'")
 		Type and Status are columns of DT and it returns the output in form of an array not DT.
+	Method 2 - for spaces in the column name
+	 	dt.Select("[Blood Group] = 'B-ve' AND [Age] > 50 AND ([City] ='Hyderabad' OR [City] ='Pune' ) ").CopyToDataTable
 
 3. When you publish your package, you need to update it in Process section in Orchestrator. Only then its available for use in all robots.
 
@@ -176,3 +179,43 @@ DataRow rows = DataTable.Select("[COLUMN 1]='' OR [COLUMN 2]=''");
 
 37. Deep Copy of Dictionary:
 		new Dictionary(of key_type,value_type) (old_dict)
+
+38. Remove Blank Rows from a DT
+		Dt=dt.select("columnname <> ''"). CopyToDataTable()
+
+39. Using Regex to replace stuff
+	System.Text.RegularExpressions.Regex.Replace((dict_LineDetails(item)(0).toString.Trim), "\s+","").ToString
+
+40. If Statement in Assign Activity:
+		If(Name = "Ishmeet", "Ishmeet",
+		If(Name = "Jasleen", "Jasleen", "No"))
+
+
+41. Use Callout activity to give a popup
+
+42. Postman UiPath link - https://postman.uipath.rocks/
+
+43. UiPath Orchestrator API Guide - https://docs.uipath.com/orchestrator/reference#webhooks-requests
+
+44. Build Dictionary, Count dictionary activity package - Workflow Manager Activities
+
+45. Swagger API - https://platform.uipath.com/IshmeetBindra/IshmeetBindra/swagger/ui/index#/Queues
+
+46. To get a range of numbers - Ennumerate.Range(Start, Count)
+
+47. To get token using python-
+		url = r"https://platform.uipath.com/IshmeetBindra/IshmeetBindra/api/Account/Authenticate"
+		
+		authentication_data = """{
+			"tenancyName": "IshmeetBindra",
+			"usernameOrEmailAddress": "ibindra1995@gmail.com",
+			"password": "Ishmeet1995@"
+		}"""
+		
+		data = requests.post(url, json= json.loads(authentication_data))
+		token_data = json.loads(data.text) 
+
+		token = "Bearer " +  str(token_data["result"])
+
+48. To filter stuff from a list from ORchestrator API - 
+		add ?$filter=Name%20eq%20'asset_url' at the end of the link
