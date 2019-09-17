@@ -219,3 +219,10 @@ DataRow rows = DataTable.Select("[COLUMN 1]='' OR [COLUMN 2]=''");
 
 48. To filter stuff from a list from ORchestrator API - 
 		add ?$filter=Name%20eq%20'asset_url' at the end of the link
+
+49. To merge 2 lists into one ->
+		var allProducts = productCollection1.Concat(productCollection2).Concat(productCollection3).ToList();
+
+50. Send multiple hot keys using single activity.
+			String.Join("", Enumerable.Repeat("[k(tab)]",3)) 
+ 
