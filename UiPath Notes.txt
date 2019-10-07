@@ -201,7 +201,9 @@ DataRow rows = DataTable.Select("[COLUMN 1]='' OR [COLUMN 2]=''");
 
 45. Swagger API - https://platform.uipath.com/IshmeetBindra/IshmeetBindra/swagger/ui/index#/Queues
 
-46. To get a range of numbers - Ennumerate.Range(Start, Count)
+46. To get a range of numbers - 
+			Ennumerate.Range(Start, Count)
+			system.Linq.Enumerable.Range(starting_num, count)
 
 47. To get token using python-
 		url = r"https://platform.uipath.com/IshmeetBindra/IshmeetBindra/api/Account/Authenticate"
@@ -248,4 +250,6 @@ DataRow rows = DataTable.Select("[COLUMN 1]='' OR [COLUMN 2]=''");
 		SingleLine
 		IgnorePatternWhitespace
 
-	These 2 options solve most of the errors
+	These 2 options solve most of the errors.
+
+
