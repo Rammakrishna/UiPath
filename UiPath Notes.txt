@@ -191,7 +191,7 @@ DataRow rows = DataTable.Select("[COLUMN 1]='' OR [COLUMN 2]=''");
 		If(Name = "Jasleen", "Jasleen", "No"))
 
 
-41. Use Callout activity to give a popup
+41. Use Callout activity to give a popup.
 
 42. Postman UiPath link - https://postman.uipath.rocks/
 
@@ -252,4 +252,31 @@ DataRow rows = DataTable.Select("[COLUMN 1]='' OR [COLUMN 2]=''");
 
 	These 2 options solve most of the errors.
 
+55. If you want something to happen via a trigger, then search for 'User Events' in activities. It provides a range of activities for the same. 
+	Also use Trigger Based Automation as a template
 
+56. Trigger activities has a property - Event Type - Async - Event Controller gets executed after  action is performed 
+												   - Sync  - Event Controller gets executed before action is performed 
+
+57. LINQ Query .Where implementation- 
+		Dim query = dt.AsEnumerable
+             .Where(Function(dr) dr("column name").ToString = "something").ToList
+
+58. To run a job Dynamically via API - 
+		You need to pass it as "Strategy":number_of_times_job_should_execute.
+				Example- "Strategy":1 means run job 1 time.
+						 "Strategy":15 means run job 15 times
+
+59. To merge 2 list
+		list1.Concat(list2)
+
+60. To remove blank values from a list - 
+		List_1.Except(New String() {""," "})
+
+61. To add values to queueitem manually:
+		1. Queueitem1 = new QueueItem
+		2. Queueitem1.SpecificContent = new Dictionary(of String,Object)
+		3. Queueitem1.SpecificContent(key) = Value 
+			or just use add to dictionary
+
+		
