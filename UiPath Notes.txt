@@ -80,7 +80,7 @@
 15. Convert DataTable to DataRow in raw format.
 		'Assign - Datarow = DataTable.Select()'
 
-16. Newsotom json conversion 
+16. NewtonSoft json conversion 
 
 17. Comparing strings: 
 		row.Item(3).ToString.Equals("")
@@ -278,5 +278,15 @@ DataRow rows = DataTable.Select("[COLUMN 1]='' OR [COLUMN 2]=''");
 		2. Queueitem1.SpecificContent = new Dictionary(of String,Object)
 		3. Queueitem1.SpecificContent(key) = Value 
 			or just use add to dictionary
+
+62. Using Where method directly
+		inOut_dict_MasterData("LineItemDetails").Split("|"c).Where(Function(x) len(x) <> 0).ToArray
+
+63. To remove Duplicate values from list you need to use Duplicate() method.
+		list_1.Duplicate()
+
+64. If you want to find out the exact cell location then use LookupRange activity. It will return exact location of the cell.
+
+
 
 		
