@@ -104,6 +104,9 @@ DataRow rows = DataTable.Select("[COLUMN 1]='' OR [COLUMN 2]=''");
 22. To convert System.Security.SecureString to String
 		String_Variable = new System.Net.NetworkCredential(string.Empty,secure).Password
 
+	To convert String to secure SString
+		SecureString_Varuable = new NetworkCredential("", "myPass").SecurePassword;
+
 23. To cast values.
 			New_String = CType(var, String)
 			DirectCast(var, String) is used to up-cast an object into a string. If you know that an object variable is, in fact, a string, use this. This is the same as (string)var in C#
@@ -286,6 +289,29 @@ DataRow rows = DataTable.Select("[COLUMN 1]='' OR [COLUMN 2]=''");
 		list_1.Duplicate()
 
 64. If you want to find out the exact cell location then use LookupRange activity. It will return exact location of the cell.
+
+65. If you want to send hotkeys while typing -: 
+		1. [d(hotkey_name)]  (Presses the key)
+		2. [u(hotkey_name)]  (Releases the key)
+		Example-
+			"%[d(lshift)]ishmeet[u(lshift)]"
+
+		Above prints 'ISHMEET' rather than 'ishmeet'
+
+66. #PDD (Process Definition Document/BFRD)
+	An initial document , a manuscript between business and RPA team , captured scope in minute detail , acts as a 'statement  of work' 	for Robotics Development.	
+	
+	#SDD (SDD / EDD / TDD )
+	majorly a technical paperwork post development which acts like a manual for further enhancements. This lists automation design, 	specifications, customization, configurations, dependency on tools/APIs/DB/encryption.	
+	This document is vital for future enhancements.	
+	
+	#SAD ( Solution Architecture Document)
+	a high level document which contains the  'as-is' & 'to-be' process flows. It can/should have a overview of Bot's technical work 	flow.	
+	
+	#Deployment Guide
+	guide on how to deploy @end environment ,contains the environment dependency/prerequisites/additional configuration  for smooth 	#rpabots operation.	
+	( in #pegadev , this contains RuntimeConfig/commonConfig/RPAservice) 
+	includes roll back plan and disaster recovery. 
 
 
 
