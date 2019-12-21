@@ -63,6 +63,7 @@
 
 11. To get the file list in a directory
 	Directory.GetFiles(“address”)	
+	Directory.GetDirectories("InvoiceDemo\Invoice files", "*", SearchOption.AllDirectories).Count()
 
 12. To color a specific cell in excel
 	a. To get actual row index of the cells to be colored :- Assign StrIndex = (dtTable1.Rows.IndexOf(row)+2).ToString
@@ -313,6 +314,61 @@ DataRow rows = DataTable.Select("[COLUMN 1]='' OR [COLUMN 2]=''");
 	( in #pegadev , this contains RuntimeConfig/commonConfig/RPAservice) 
 	includes roll back plan and disaster recovery. 
 
+67. Running a PowerShell Script : 
+	Step 1. Check 'IsScript' property.
+	Step 2. Type in your script such as 
+		"rasphone -d ""MSFTVPN""" + Environment.NewLine + "Start-sleep 10"
+	Step 3. Run the program.
 
 
+68. Powershell Commands - 
+	a. To check Internet connectivity - 
+			netsh interface show interface
+	b. To connect to a specific VPN - 
+			rasphone -d "VPN_Name"
+	c. To check is we are connected to a specific VPN or not - 
+			1. Get-VPNconnection -Name "VPN_Name"
+			2. Its output type is Microsoft.Management.Infrastructure.CimInstance
+			3. Assign it to a variable and check the following
+				powershell_output(0).CimInstanceProperties.Item("ConnectionStatus")
+
+				If above is 'connected' it means that our VPN is connected, if not then run the command mentioned in section 'b'
+
+
+69. Format time via - 
+		.ToString("h:mm:ss tt")  -> For non 24hr standard
+		.ToString("HH:mm:ss tt") -> For 24hr Standard
+
+70. If you are not able to extract values from a Dropdown menu then simply use Extract Structured Data.
+
+71. IF the element on which you want to click is not properly visible and your cursor is clicking somewhere you don't want it to then check the simulate click option
+
+72. To pick and place something -
+	Step1. Click activity with Click Type property = Mouse Down
+	Step2. Hover activity to place it in place.
+	Step3. Click activity with Click Type property = Mouse Up
+
+73. In UiPath 10.0 version we have an Immediate Pannel, it gives us the indepth result. For example if we want to see that whats the value of the row's item, just type
+	row.item(0) in its pannel and hit enter. It will display it. Handy stuff.
+
+74. Using Variables in Selectors without using string manipulation:
+	https://forum.uipath.com/t/how-to-use-variables-in-selectors-in-studio-dynamic-selectors-without-string-manipulation/154110
+
+75. When you need to get some input from user via Orchestrator use
+		1. Create Form Task: Creates a form on Orchestrator to accept inputs.
+		2. Wait From Task : Waits till user fills in the Form
 		
+76. To get last modiied date of a file : 
+		System.IO.File.GetLastWriteTime(strFilePath)
+
+77. To Stamp the PDF -
+	Download UiPathTeam.PDF.Extensions.Activities 
+	Use watermark pdf activity.
+		Properties - 
+			Colour - XColor.FromKnownColor(XKnownColor.Blue)
+			Font - New PdfSharp.Drawing.XFont("Arial",60, XfontStyle.Bold)
+			Pages - "1-2" (For Range of Pages. "1" for a single page. )
+
+	If you want advanced control then write a python script for it.
+
+

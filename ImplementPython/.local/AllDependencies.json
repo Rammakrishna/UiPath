@@ -1572,14 +1572,14 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ibindra\\.nuget\\packages\\": {}
+    "C:\\Users\\v-Isbind\\.nuget\\packages\\": {}
   },
   "project": {
     "restore": {
       "projectUniqueName": "ImplementPython",
       "projectName": "ImplementPython",
       "projectPath": "C:\\Ishmeet Bindra\\Learning\\UiPath\\Github_Sync\\UiPath\\ImplementPython\\.local",
-      "packagesPath": "C:\\Users\\ibindra\\.nuget\\packages\\",
+      "packagesPath": "C:\\Users\\v-Isbind\\.nuget\\packages\\",
       "outputPath": "C:\\Ishmeet Bindra\\Learning\\UiPath\\Github_Sync\\UiPath\\ImplementPython\\.local"
     },
     "frameworks": {
